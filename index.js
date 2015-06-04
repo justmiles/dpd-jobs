@@ -130,8 +130,8 @@ Jobs.prototype.runScript = function(file, callback) {
             domain.out.error = function (message) {
                 self.log(message, file, "error");
             };
-            domain.request = request;
-            domain.require = require;
+            //domain.request = request;
+            //domain.require = require;
 
             var ctx = { req:{session:{isRoot:true}, isRoot:true} };
 
@@ -159,6 +159,8 @@ Jobs.prototype.runScript = function(file, callback) {
         }
     });
 }
+
+
 
 Jobs.prototype.configChanged = function(config, fn) {
     var store = this.store;
